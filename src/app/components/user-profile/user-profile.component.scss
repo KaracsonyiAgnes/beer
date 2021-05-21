@@ -1,0 +1,36 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 5px 0 60px 0;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 12px 2px rgba(15, 15, 15, 0.2);
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.user-detail {
+  width: 80%;
+}
+
+.lower-container {
+  .list {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}

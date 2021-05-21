@@ -1,0 +1,77 @@
+<div class="container">
+  <div *ngIf="beer" class="beer-detail">
+    <div class="title">
+      <h2>{{beer.name}}</h2>
+    </div>
+    <div class="details">
+
+      <div class="left-container">
+        <img class="beer-picture" alt="Picture of the beer" [src]="itemImageUrl"/>
+      </div>
+
+      <div class="right-container">
+        <div class="detail score">{{beer.score}}</div>
+        <div class="detail">{{beer.description}}</div>
+        <div class="detail">
+          <button class="btn" (click)="addToFavorites()">Add to favorites</button>
+        </div>
+        <div class="detail">
+          <h3 class="category-title title">Categories</h3>
+          <div class="beer-categories">
+            <div class="category" *ngFor="let category of beer.categories">
+              {{category.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="lower-container">
+      <div class="ratings">
+        <h3 class="title">Rate</h3>
+        <div class="rating-container">
+
+          <button class="rating-button" (click)="ratingBeer(1)">1</button>
+          <button class="rating-button" (click)="ratingBeer(2)">2</button>
+          <button class="rating-button" (click)="ratingBeer(3)">3</button>
+          <button class="rating-button" (click)="ratingBeer(4)">4</button>
+          <button class="rating-button" (click)="ratingBeer(5)">5</button>
+
+          <div class="stars-outer">
+            <div class="stars-inner"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div *ngIf="beersFromSameCategory" class="recommended-beers">
+        <h2 class="recommended-beers-title title">Beers with same category</h2>
+        <div class="card-container">
+          <div class="card highlight-card" *ngFor="let beer of beersFromSameCategory"
+               (click)="this.navigateToOtherBeersPage(beer)">
+            <div class="name title">{{beer.name}}</div>
+            <div class="categories" *ngFor="let category of beer.categories">
+              <div class="category">{{category.name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="recommendedBeers" class="may-be-interested">
+        <h2 class="title">Beers may be interested in</h2>
+        <div class="card-container">
+          <div class="card highlight-card" *ngFor="let beer of recommendedBeers"
+               (click)="this.navigateToOtherBeersPage(beer)">
+            <div class="name title">{{beer.name}}</div>
+            <div class="categories" *ngFor="let category of beer.categories">
+              <div class="category">{{category.name}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

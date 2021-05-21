@@ -1,0 +1,8 @@
+<div class="toolbar">
+  <img class="logo" routerLink="/home" alt="Beer Logo" src="assets/two-beers.svg"/>
+  <div class="circle-link profile-badge" (click)="profileClicked()">
+    <img src="assets/avatar.png" alt="Avatar">
+  </div>
+</div>
+
+<app-user-menu *ngIf="prolfileOpened"></app-user-menu>

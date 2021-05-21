@@ -1,0 +1,28 @@
+<div class="base-container">
+  <div class="login-container">
+    <div class="header">
+      Login
+    </div>
+    <div class="content">
+      <div class="image">
+        <img src="assets/login-image.svg" alt="login-image">
+      </div>
+      <div class="form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" [formControl]="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" [formControl]="password">
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button class="btn" (click)="handleSubmit()">Login</button>
+      <div class="register">
+        <p routerLink="/register">Doesn't have an account yet, register</p>
+      </div>
+    </div>
+  </div>
+</div>

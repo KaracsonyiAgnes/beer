@@ -1,0 +1,17 @@
+<div class="top-list">
+  <div class="title">
+    <h2>Top List</h2>
+  </div>
+
+  <ul class="list" *ngIf="beers">
+    <li class="row" *ngFor="let beer of beers" routerLink="/beer-detail" [state]="beer">
+      <div class="beer-name">{{beer.name}}</div>
+      <div class="beer-categories">
+        <div *ngFor="let category of beer.categories">
+          <div class="category">{{category.name}}</div>
+        </div>
+      </div>
+      <div class="numberOfLikes">{{beer.score}}</div>
+    </li>
+  </ul>
+</div>

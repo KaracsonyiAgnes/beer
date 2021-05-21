@@ -1,0 +1,13 @@
+<div class="side-menu">
+  <div class="profile-card-container">
+    <div class="card">
+      <p>{{user.name}}</p>
+    </div>
+    <div class="card card-clickable" routerLink="/user-profile" [state]="user">
+      <p>Profile</p>
+    </div>
+    <div class="card card-clickable" (click)="logOut()">
+      <p>Log Out</p>
+    </div>
+  </div>
+</div>

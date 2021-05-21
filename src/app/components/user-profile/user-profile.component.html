@@ -1,0 +1,31 @@
+<div class="container">
+  <div *ngIf="user" class="user-detail">
+    <div class="details">
+
+      <div class="left-container">
+        <div class="detail">{{user.name}}</div>
+      </div>
+
+      <div class="right-container">
+        <div class="detail">{{user.email}}</div>
+      </div>
+
+    </div>
+
+    <div class="lower-container">
+      <div class="title">
+        <h2>My favorites</h2>
+      </div>
+      <ul class="list">
+        <li class="row" *ngFor="let beer of user.favorites" routerLink="/beer-detail" [state]="beer">
+          <div class="beer-name">{{beer.name}}</div>
+          <div class="beer-categories">
+            <div *ngFor="let category of beer.categories">
+              <div class="category">{{category.name}}</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
